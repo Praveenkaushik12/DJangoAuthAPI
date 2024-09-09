@@ -1,5 +1,6 @@
 from pathlib import Path
 from datetime import timedelta
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -110,6 +111,21 @@ REST_FRAMEWORK = {
 
 }
 
+# Email Configuration
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "noreplytestprofile@gmail.com"
+EMAIL_HOST_PASSWORD = "oyqhxwhgnconohgz"  # Make sure there are no spaces in the password
+DEFAULT_FROM_EMAIL = "noreplytestprofile@gmail.com"
+
+EMAIL_USE_TLS = True
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=20),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
@@ -138,6 +154,7 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
 
+PASSWORD_RESET_TIMEOUT=900 
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
